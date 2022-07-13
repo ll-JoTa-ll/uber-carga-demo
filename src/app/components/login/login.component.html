@@ -1,1 +1,63 @@
-<p>login works!</p>
+<div class="row m-4">
+  <div class="col-12 pt-4" style="font-size: 30px">Cargo App</div>
+
+  <div class="col-12 pt-5">
+    <div class="row" style="background-color: dimgrey">
+      <div class="col-6">
+        <button
+          [ngClass]="{
+            'sel-tipo-login': tipoLogin == 1,
+            'unsel-tipo-login': tipoLogin == 2
+          }"
+          (click)="selTipo(1)"
+          class="btn"
+          style="width: 90%"
+        >
+          Transportista
+        </button>
+      </div>
+
+      <div class="col-6">
+        <button
+          [ngClass]="{
+            'sel-tipo-login': tipoLogin == 2,
+            'unsel-tipo-login': tipoLogin == 1
+          }"
+          (click)="selTipo(2)"
+          class="btn"
+          style="width: 90%"
+        >
+          Empresa
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-4">Correo</div>
+  <div class="col-12">
+    <input type="text" class="form-control" [(ngModel)]="model.correo" />
+  </div>
+
+  <div class="col-12 pt-3">Contraseña</div>
+  <div class="col-12">
+    <input type="text" class="form-control" [(ngModel)]="model.clave" />
+  </div>
+
+  <div class="col-12 text-center pt-5">
+    <button
+      (click)="login()"
+      class="btn"
+      style="background-color: orangered; color: white"
+    >
+      Iniciar Sesion
+    </button>
+  </div>
+
+  <div class="col-12 pt-5">olvido su contraseña</div>
+
+  <div class="col-12">Registrate</div>
+
+  <div class="col-12"></div>
+
+  <div class="col-12"></div>
+</div>
