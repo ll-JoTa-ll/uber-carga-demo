@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from '../../models/usuario';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,19 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
   model: any = {};
   usuarios: Usuario[];
-  tipoLogin: 0;
+  loginEmpresa: boolean;
+  loginTransportista: boolean;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) {
+  constructor(
+    private usuarioService: UsuarioService,
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) {
+    this.loginEmpresa = true;
+    this.loginTransportista = false;
+    this.model.correo = '';
+    this.model.clave = '';
+
     this.usuarioService.getUsuarios().subscribe(
       (result) => {
         this.usuarios = result.map((e) => {
@@ -34,11 +45,38 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  selTipo(valor) {
-    this.tipoLogin = valor;
+  selTipo(valor1, valor2) {
+    this.loginEmpresa = valor1;
+    this.loginTransportista = valor2;
   }
 
   login() {
+    this.spinner.show();
+    let tipoLogin = 1;
+    if (this.loginEmpresa == true) {
+      tipoLogin = 2;
+    }
+    let usuarios = this.usuarios;
+
+    let usuario = usuarios.filter(
+      (x) =>
+        x.tipo == tipoLogin &&
+        x.correo == this.model.correo &&
+        x.clave == this.model.clave
+    );
+
+    console.log('usuario: ' + JSON.stringify(usuario));
+
+    if (usuario.length == 1) {
+      this.spinner.hide();
+
+      this.router.navigate(['/empresa/ingresar-ruta']);
+    } else {
+      this.spinner.hide();
+    }
+
+    //demo2@gmail.com
+
     //this.router.navigate(['/empresa/ingresar-ruta']);
   }
 }

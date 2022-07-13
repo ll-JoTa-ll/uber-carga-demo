@@ -1,15 +1,20 @@
 <div class="row m-4">
   <div class="col-12 pt-4" style="font-size: 30px">Cargo App</div>
 
-  <div class="col-12 pt-5">
+  <div *ngIf="false" class="col-12">
+    loginTransportista: {{ loginTransportista }}
+  </div>
+  <div *ngIf="false" class="col-12">loginEmpresa: {{ loginEmpresa }}</div>
+
+  <div class="col-12 pt-4">
     <div class="row" style="background-color: dimgrey">
       <div class="col-6">
         <button
           [ngClass]="{
-            'sel-tipo-login': tipoLogin == 1,
-            'unsel-tipo-login': tipoLogin == 2
+            'sel-tipo-login': loginTransportista === true,
+            'unsel-tipo-login': loginEmpresa === false
           }"
-          (click)="selTipo(1)"
+          (click)="selTipo(false, true)"
           class="btn"
           style="width: 90%"
         >
@@ -20,10 +25,10 @@
       <div class="col-6">
         <button
           [ngClass]="{
-            'sel-tipo-login': tipoLogin == 2,
-            'unsel-tipo-login': tipoLogin == 1
+            'sel-tipo-login': loginEmpresa === true,
+            'unsel-tipo-login': loginTransportista === false
           }"
-          (click)="selTipo(2)"
+          (click)="selTipo(true, false)"
           class="btn"
           style="width: 90%"
         >
@@ -61,3 +66,12 @@
 
   <div class="col-12"></div>
 </div>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="timer"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>
