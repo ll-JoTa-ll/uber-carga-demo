@@ -9,11 +9,15 @@
     <div class="row">
       <div class="col-12">Tipo de Carga</div>
       <div class="col-12">
-        <select class="form-control" name="select">
+        <select
+          [(ngModel)]="model.tipoCarga"
+          class="form-control"
+          name="select"
+        >
           <option value="value1" selected>Seleccionar</option>
-          <option value="value2">Seca</option>
-          <option value="value2">Contenerizada</option>
-          <option value="value2">Liquida</option>
+          <option value="Seca">Seca</option>
+          <option value="Contenerizada">Contenerizada</option>
+          <option value="Liquida">Liquida</option>
         </select>
       </div>
     </div>
@@ -23,7 +27,11 @@
     <div class="row">
       <div class="col-12">Peso y Dimensiones</div>
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <input
+          [(ngModel)]="model.pesoDimensiones"
+          class="form-control"
+          type="text"
+        />
       </div>
     </div>
   </div>
@@ -31,14 +39,18 @@
   <div class="col-12 pt-3">
     <div class="row">
       <div class="col-12">Origen</div>
-      <div class="col-12"><input class="form-control" type="text" /></div>
+      <div [(ngModel)]="model.origen" class="col-12">
+        <input class="form-control" type="text" />
+      </div>
     </div>
   </div>
 
   <div class="col-12 pt-3">
     <div class="row">
       <div class="col-12">Destino</div>
-      <div class="col-12"><input class="form-control" type="text" /></div>
+      <div [(ngModel)]="model.destino" class="col-12">
+        <input class="form-control" type="text" />
+      </div>
     </div>
   </div>
 
@@ -47,12 +59,17 @@
       <div class="col-12">Fecha estimada de salida</div>
       <div class="col-12">
         <input
+          [(ngModel)]="model.fechaEstimadaSalida"
           readonly
           type="text"
           placeholder=""
           class="form-control"
           bsDatepicker
-          [bsConfig]="{ isAnimated: true, dateInputFormat: 'DD/MM/YYYY' }"
+          [bsConfig]="{
+            isAnimated: true,
+            dateInputFormat: 'DD/MM/YYYY',
+            adaptivePosition: true
+          }"
         />
       </div>
     </div>
@@ -62,7 +79,17 @@
     <div class="row">
       <div class="col-12">Condiciones Especiales</div>
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <select
+          [(ngModel)]="model.condicionesEspeciales"
+          class="form-control"
+          name="select"
+        >
+          <option value="0" selected>Seleccionar</option>
+          <option value="Polizas">Polizas</option>
+          <option value="Escolta">Escolta</option>
+          <option value="Cargue">Cargue</option>
+          <option value="Descargue">Descargue</option>
+        </select>
       </div>
     </div>
   </div>
