@@ -70,7 +70,12 @@ export class LoginComponent implements OnInit {
     if (usuario.length == 1) {
       this.spinner.hide();
 
-      this.router.navigate(['/empresa/ingresar-ruta']);
+      if (tipoLogin == 1) {
+        this.router.navigate(['/empresa/ingresar-ruta']);
+      }
+      if (tipoLogin == 2) {
+        this.router.navigate(['/empresa/ingresar-ruta']);
+      }
     } else {
       this.spinner.hide();
     }

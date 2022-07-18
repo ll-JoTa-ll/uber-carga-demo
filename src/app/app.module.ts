@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ import { SolicitudRegistradaComponent } from './components/empresa/solicitud-reg
     AngularFireAuthModule,
     AngularFirestoreModule,
     NgxSpinnerModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

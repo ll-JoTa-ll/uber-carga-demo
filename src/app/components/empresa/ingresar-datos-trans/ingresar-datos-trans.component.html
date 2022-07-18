@@ -1,1 +1,97 @@
-<p>ingresar-datos-trans works!</p>
+<div class="row p-4">
+  <div class="col-12 text-center pt-3">¿Que desea transportar?</div>
+
+  <div class="col-12 text-center">
+    <img width="80px" src="./assets/images/camion.jpg" alt="" />
+  </div>
+
+  <div class="col-12 pt-4">
+    <div class="row">
+      <div class="col-12">Tipo de Carga</div>
+      <div class="col-12">
+        <select class="form-control" name="select">
+          <option value="value1" selected>Seleccionar</option>
+          <option value="value2">Seca</option>
+          <option value="value2">Contenerizada</option>
+          <option value="value2">Liquida</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-12">Peso y Dimensiones</div>
+      <div class="col-12">
+        <input class="form-control" type="text" />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-12">Origen</div>
+      <div class="col-12"><input class="form-control" type="text" /></div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-12">Destino</div>
+      <div class="col-12"><input class="form-control" type="text" /></div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-12">Fecha estimada de salida</div>
+      <div class="col-12">
+        <input
+          readonly
+          type="text"
+          placeholder=""
+          class="form-control"
+          bsDatepicker
+          [bsConfig]="{ isAnimated: true, dateInputFormat: 'DD/MM/YYYY' }"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col-12">Condiciones Especiales</div>
+      <div class="col-12">
+        <input class="form-control" type="text" />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12"></div>
+
+  <div class="col-12"></div>
+
+  <div class="col-12"></div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-6">
+        <button
+          style="background-color: coral; color: white"
+          class="btn form-control"
+        >
+          Atras
+        </button>
+      </div>
+
+      <div class="col-6">
+        <button
+          style="background-color: coral; color: white"
+          class="btn form-control"
+        >
+          Siguiente
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
