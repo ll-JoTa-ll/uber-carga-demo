@@ -6,6 +6,11 @@ import {
   ElementRef,
 } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
+import { UsuarioService } from '../../../services/usuario.service';
+import { Usuario } from '../../../models/usuario';
+import { Router, ActivatedRoute } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-confirmar-ruta',
@@ -14,8 +19,15 @@ import mapboxgl from 'mapbox-gl';
 })
 export class ConfirmarRutaComponent implements OnInit, AfterViewInit {
   @ViewChild('mapDiv') mapDivElement!: ElementRef;
+  empresa_ruta_data: any = {};
 
-  constructor() {}
+  constructor(
+    private usuarioService: UsuarioService,
+    private router: Router,
+    private spinner: NgxSpinnerService,
+    private sessionStorageService: SessionStorageService,
+    private localStorageService: LocalStorageService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -27,5 +39,13 @@ export class ConfirmarRutaComponent implements OnInit, AfterViewInit {
       zoom: 9, // starting zoom
       //projection: 'globe', // display the map as a 3D globe
     });
+  }
+
+  confirmarRuta() {
+    this.empresa_ruta_data = this.sessionStorageService.retrieve(
+      'ss_empresa_ruta_data'
+    );
+    this.usuarioService.createEmpresaRuta(this.empresa_ruta_data);
+    this.router.navigate(['/empresa']);
   }
 }

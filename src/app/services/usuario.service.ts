@@ -50,4 +50,15 @@ export class UsuarioService {
         );
     });
   }
+
+  getEmpresaRutaById(id) {
+    return this.angularFirestore
+      .collection('empresaRuta')
+      .doc(id)
+      .valueChanges();
+  }
+
+  getEmpresaRutas() {
+    return this.angularFirestore.collection('empresaRuta').snapshotChanges();
+  }
 }

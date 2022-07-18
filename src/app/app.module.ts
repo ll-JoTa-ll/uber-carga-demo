@@ -10,6 +10,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
@@ -21,6 +22,8 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
 import { IngresarDatosTransComponent } from './components/empresa/ingresar-datos-trans/ingresar-datos-trans.component';
 import { ConfirmarRutaComponent } from './components/empresa/confirmar-ruta/confirmar-ruta.component';
 import { SolicitudRegistradaComponent } from './components/empresa/solicitud-registrada/solicitud-registrada.component';
+import { MisViajesComponent } from './components/empresa/mis-viajes/mis-viajes.component';
+import { MetricasComponent } from './components/empresa/metricas/metricas.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { SolicitudRegistradaComponent } from './components/empresa/solicitud-reg
     IngresarDatosTransComponent,
     ConfirmarRutaComponent,
     SolicitudRegistradaComponent,
+    MisViajesComponent,
+    MetricasComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ import { SolicitudRegistradaComponent } from './components/empresa/solicitud-reg
     AngularFirestoreModule,
     NgxSpinnerModule,
     BsDatepickerModule.forRoot(),
+    NgxWebstorageModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

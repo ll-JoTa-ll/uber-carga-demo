@@ -3,6 +3,7 @@ import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from '../../models/usuario';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     private router: Router,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private sessionStorageService: SessionStorageService,
+    private localStorageService: LocalStorageService
   ) {
     this.loginEmpresa = true;
     this.loginTransportista = false;
@@ -71,10 +74,12 @@ export class LoginComponent implements OnInit {
       this.spinner.hide();
 
       if (tipoLogin == 1) {
-        this.router.navigate(['/empresa/ingresar-ruta']);
+        this.router.navigate(['/transporte']);
       }
       if (tipoLogin == 2) {
-        this.router.navigate(['/empresa/ingresar-ruta']);
+        this.sessionStorageService.store('ss_empresa', usuario);
+
+        this.router.navigate(['/empresa']);
       }
     } else {
       this.spinner.hide();

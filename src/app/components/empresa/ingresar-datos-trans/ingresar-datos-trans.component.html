@@ -9,12 +9,8 @@
     <div class="row">
       <div class="col-12">Tipo de Carga</div>
       <div class="col-12">
-        <select
-          [(ngModel)]="model.tipoCarga"
-          class="form-control"
-          name="select"
-        >
-          <option value="value1" selected>Seleccionar</option>
+        <select [(ngModel)]="model.tipoCarga" class="form-control">
+          <option value="0" selected>Seleccionar</option>
           <option value="Seca">Seca</option>
           <option value="Contenerizada">Contenerizada</option>
           <option value="Liquida">Liquida</option>
@@ -39,8 +35,8 @@
   <div class="col-12 pt-3">
     <div class="row">
       <div class="col-12">Origen</div>
-      <div [(ngModel)]="model.origen" class="col-12">
-        <input class="form-control" type="text" />
+      <div class="col-12">
+        <input [(ngModel)]="model.origen" class="form-control" type="text" />
       </div>
     </div>
   </div>
@@ -48,8 +44,8 @@
   <div class="col-12 pt-3">
     <div class="row">
       <div class="col-12">Destino</div>
-      <div [(ngModel)]="model.destino" class="col-12">
-        <input class="form-control" type="text" />
+      <div class="col-12">
+        <input [(ngModel)]="model.destino" class="form-control" type="text" />
       </div>
     </div>
   </div>
@@ -79,12 +75,8 @@
     <div class="row">
       <div class="col-12">Condiciones Especiales</div>
       <div class="col-12">
-        <select
-          [(ngModel)]="model.condicionesEspeciales"
-          class="form-control"
-          name="select"
-        >
-          <option value="0" selected>Seleccionar</option>
+        <select [(ngModel)]="model.condicionesEspeciales" class="form-control">
+          <option value="0">Seleccionar</option>
           <option value="Polizas">Polizas</option>
           <option value="Escolta">Escolta</option>
           <option value="Cargue">Cargue</option>
@@ -113,6 +105,7 @@
 
       <div class="col-6">
         <button
+          (click)="next()"
           style="background-color: coral; color: white"
           class="btn form-control"
         >
