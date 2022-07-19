@@ -46,6 +46,6 @@ export class ConfirmarRutaComponent implements OnInit, AfterViewInit {
       'ss_empresa_ruta_data'
     );
     this.usuarioService.createEmpresaRuta(this.empresa_ruta_data);
-    this.router.navigate(['/empresa']);
+    this.router.navigate(['/empresa/ruta-registrada']);
   }
 }

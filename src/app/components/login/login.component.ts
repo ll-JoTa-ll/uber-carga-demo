@@ -74,6 +74,8 @@ export class LoginComponent implements OnInit {
       this.spinner.hide();
 
       if (tipoLogin == 1) {
+        this.sessionStorageService.store('ss_transporte', usuario);
+
         this.router.navigate(['/transporte']);
       }
       if (tipoLogin == 2) {

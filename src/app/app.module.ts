@@ -24,6 +24,8 @@ import { ConfirmarRutaComponent } from './components/empresa/confirmar-ruta/conf
 import { SolicitudRegistradaComponent } from './components/empresa/solicitud-registrada/solicitud-registrada.component';
 import { MisViajesComponent } from './components/empresa/mis-viajes/mis-viajes.component';
 import { MetricasComponent } from './components/empresa/metricas/metricas.component';
+import { RutasOfertasComponent } from './components/transportista/rutas-ofertas/rutas-ofertas.component';
+import { AceptarOfertaComponent } from './components/transportista/aceptar-oferta/aceptar-oferta.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { MetricasComponent } from './components/empresa/metricas/metricas.compon
     SolicitudRegistradaComponent,
     MisViajesComponent,
     MetricasComponent,
+    RutasOfertasComponent,
+    AceptarOfertaComponent,
   ],
   imports: [
     BrowserModule,

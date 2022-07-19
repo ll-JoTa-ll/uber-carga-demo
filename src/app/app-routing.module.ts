@@ -7,6 +7,9 @@ import { MetricasComponent } from './components/empresa/metricas/metricas.compon
 import { MisViajesComponent } from './components/empresa/mis-viajes/mis-viajes.component';
 import { SolicitudRegistradaComponent } from './components/empresa/solicitud-registrada/solicitud-registrada.component';
 import { LoginComponent } from './components/login/login.component';
+import { AceptarOfertaComponent } from './components/transportista/aceptar-oferta/aceptar-oferta.component';
+import { RutasOfertasComponent } from './components/transportista/rutas-ofertas/rutas-ofertas.component';
+import { TransportistaComponent } from './components/transportista/transportista.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, runGuardsAndResolvers: 'always' },
@@ -38,6 +41,21 @@ const routes: Routes = [
   {
     path: 'empresa/metricas',
     component: MetricasComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'transporte',
+    component: TransportistaComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'transporte/ofertas',
+    component: RutasOfertasComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'transporte/oferta-enviada',
+    component: AceptarOfertaComponent,
     runGuardsAndResolvers: 'always',
   },
 ];

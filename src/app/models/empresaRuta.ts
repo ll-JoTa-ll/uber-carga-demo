@@ -5,7 +5,7 @@ export class EmpresaRuta {
   empresaCorreo: string;
   empresaId: string;
   estado: string;
-  fechaEstimadaSalida: string;
+  fechaEstimadaSalida;
   origen: string;
   pesoDimensiones: string;
   tipoCarga: string;
