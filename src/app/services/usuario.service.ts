@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 //import { resolve } from 'dns';
 import { Usuario } from '../models/usuario';
 import { EmpresaRuta } from '../models/empresaRuta';
+import { EmpresaRutaTransportistaProceso } from '../models/empresaRutaTransportistaProceso';
 
 @Injectable({
   providedIn: 'root',
@@ -34,6 +35,13 @@ export class UsuarioService {
         );
     });
   }
+
+  ////////////////////////
+  ////////////////////////
+  ////////////////////////
+  ////////////////////////
+  ////////////////////////
+  ////////////////////////
 
   createEmpresaRuta(empresaRuta: EmpresaRuta) {
     return new Promise<any>((resolve, reject) => {
@@ -71,5 +79,36 @@ export class UsuarioService {
 
   deleteEmpresaRuta(id) {
     return this.angularFirestore.collection('empresaRuta').doc(id).delete();
+  }
+
+  ////////////////////////
+  ////////////////////////
+  ////////////////////////
+  ////////////////////////
+  ////////////////////////
+  ////////////////////////
+
+  getEmpresaRutaTransportistaProceso() {
+    return this.angularFirestore
+      .collection('empresaRutaTransportistaProceso')
+      .snapshotChanges();
+  }
+
+  createEmpresaRutaTransportistaProceso(
+    empresaRutaTransportistaProceso: EmpresaRutaTransportistaProceso
+  ) {
+    return new Promise<any>((resolve, reject) => {
+      this.angularFirestore
+        .collection('empresaRutaTransportistaProceso')
+        .add(empresaRutaTransportistaProceso)
+        .then(
+          (response) => {
+            console.log(response);
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+    });
   }
 }

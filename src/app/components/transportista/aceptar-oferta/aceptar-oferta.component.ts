@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from '../../../services/usuario.service';
 import { EmpresaRuta } from '../../../models/empresaRuta';
 import { Usuario } from '../../../models/usuario';
+import { EmpresaRutaTransportistaProceso } from '../../../models/empresaRutaTransportistaProceso';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
 
@@ -14,6 +15,9 @@ import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
 export class AceptarOfertaComponent implements OnInit {
   empresa_sel: EmpresaRuta = new EmpresaRuta();
   usuario_empresa: Usuario = new Usuario();
+  transportista_empresa: Usuario = new Usuario();
+  empresaRutaTransportistaProceso: EmpresaRutaTransportistaProceso =
+    new EmpresaRutaTransportistaProceso();
 
   constructor(
     private usuarioService: UsuarioService,
@@ -22,7 +26,10 @@ export class AceptarOfertaComponent implements OnInit {
     private sessionStorageService: SessionStorageService,
     private localStorageService: LocalStorageService
   ) {
+    this.transportista_empresa =
+      this.sessionStorageService.retrieve('ss_transporte');
     this.empresa_sel = this.sessionStorageService.retrieve('ss_empresa_sel');
+    console.log(this.transportista_empresa);
     console.log(this.empresa_sel);
 
     this.spinner.show();
@@ -51,6 +58,13 @@ export class AceptarOfertaComponent implements OnInit {
         this.usuarioService.updateEmpresaRuta(
           this.empresa_sel,
           this.empresa_sel.id
+        );
+
+        this.empresaRutaTransportistaProceso.empresaId = this.empresa_sel.id;
+        this.empresaRutaTransportistaProceso.empresaId =
+          this.transportista_empresa[0].id;
+        this.usuarioService.createEmpresaRutaTransportistaProceso(
+          this.empresaRutaTransportistaProceso
         );
         this.spinner.hide();
       },

@@ -71,4 +71,9 @@ export class MisViajesComponent implements OnInit, AfterViewInit {
   back() {
     this.router.navigate(['/empresa']);
   }
+
+  seleccionar(item) {
+    this.sessionStorageService.store('ss_ruta_empresa_proceso', item);
+    this.router.navigate(['/empresa/elegir']);
+  }
 }

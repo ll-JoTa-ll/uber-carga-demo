@@ -28,6 +28,7 @@
 
           <div *ngIf="item.estado_int == 2" class="col-12">
             <button
+              (click)="seleccionar(item)"
               class="btn form-control"
               style="background-color: burlywood"
             >
