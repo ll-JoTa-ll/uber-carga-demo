@@ -33,6 +33,7 @@ export class IngresarDatosTransComponent implements OnInit {
     this.model.estado = 'Buscando Transportista';
     this.model.empresaCorreo = this.empresa[0].correo;
     this.model.empresaId = this.empresa[0].id;
+    this.model.estado_int = 1;
   }
 
   next() {
@@ -57,5 +58,9 @@ export class IngresarDatosTransComponent implements OnInit {
     console.log(this.model);
 
     this.router.navigate(['/empresa/confirmar-ruta']);
+  }
+
+  back() {
+    this.router.navigate(['/empresa/mis-viajes']);
   }
 }

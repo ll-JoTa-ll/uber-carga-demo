@@ -9,4 +9,5 @@ export class EmpresaRuta {
   origen: string;
   pesoDimensiones: string;
   tipoCarga: string;
+  estado_int: number;
 }

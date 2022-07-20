@@ -63,4 +63,12 @@ export class MisViajesComponent implements OnInit, AfterViewInit {
   irRegistro() {
     this.router.navigate(['/empresa/ingresar-ruta']);
   }
+
+  next() {
+    this.router.navigate(['/empresa/ingresar-ruta']);
+  }
+
+  back() {
+    this.router.navigate(['/empresa']);
+  }
 }
