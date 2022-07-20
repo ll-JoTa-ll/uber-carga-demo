@@ -13,6 +13,10 @@ import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
 })
 export class RutasOfertasComponent implements OnInit {
   solicitudes: EmpresaRuta[];
+  usuario_empresa: Usuario = new Usuario();
+  transportista_empresa: Usuario = new Usuario();
+
+  data: any = {};
 
   constructor(
     private usuarioService: UsuarioService,
@@ -21,6 +25,8 @@ export class RutasOfertasComponent implements OnInit {
     private sessionStorageService: SessionStorageService,
     private localStorageService: LocalStorageService
   ) {
+    this.transportista_empresa =
+      this.sessionStorageService.retrieve('ss_transporte');
     this.spinner.show();
     this.usuarioService.getEmpresaRutas().subscribe(
       (result) => {
@@ -49,8 +55,49 @@ export class RutasOfertasComponent implements OnInit {
   ngOnInit(): void {}
 
   aceptar(item) {
+    this.spinner.show();
     this.sessionStorageService.store('ss_empresa_sel', item);
 
-    this.router.navigate(['/transporte/oferta-enviada']);
+    console.log('UPDATE');
+    console.log('UPDATE');
+
+    item.estado_int = 2;
+    item.estado = 'En Proceso';
+
+    console.log(item);
+
+    this.usuarioService.updateEmpresaRuta(item, item.id);
+
+    this.data.empresaId = item.empresaId;
+    this.data.transportistaId = this.transportista_empresa[0].id;
+    this.data.rutaId = item.id;
+
+    console.log('createEmpresaRutaTransportistaProceso');
+    console.log('createEmpresaRutaTransportistaProceso');
+    console.log('createEmpresaRutaTransportistaProceso');
+    console.log(this.data);
+
+    this.usuarioService.createEmpresaRutaProceso(this.data);
+
+    let flag = 0;
+    this.usuarioService.getUsuarioById(item.empresaId).subscribe(
+      (result: Usuario) => {
+        console.log('this.usuario_empresa');
+        this.usuario_empresa = result;
+        console.log(this.usuario_empresa);
+        this.sessionStorageService.store(
+          'ss_usuario_empresa_oferta',
+          this.usuario_empresa
+        );
+        this.spinner.hide();
+        this.router.navigate(['/transporte/oferta-enviada']);
+      },
+      (err) => {
+        this.spinner.hide();
+      },
+      () => {
+        this.spinner.hide();
+      }
+    );
   }
 }
