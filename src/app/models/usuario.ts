@@ -1,6 +1,9 @@
 export class Usuario {
   id: string;
-  tipo: number;
-  correo: string;
   clave: string;
+  correo: string;
+  dni: string;
+  nombre: string;
+  tipo: number;
+  tipoDesc: string;
 }

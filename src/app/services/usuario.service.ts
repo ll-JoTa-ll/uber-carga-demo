@@ -61,4 +61,15 @@ export class UsuarioService {
   getEmpresaRutas() {
     return this.angularFirestore.collection('empresaRuta').snapshotChanges();
   }
+
+  updateEmpresaRuta(empresaRuta: EmpresaRuta, id) {
+    return this.angularFirestore
+      .collection('empresaRuta')
+      .doc(id)
+      .update(empresaRuta);
+  }
+
+  deleteEmpresaRuta(id) {
+    return this.angularFirestore.collection('empresaRuta').doc(id).delete();
+  }
 }
