@@ -36,6 +36,23 @@ export class IngresarDatosTransComponent implements OnInit {
   }
 
   next() {
+    var fechaReg = this.model.fechaEstimadaSalida;
+    console.log(fechaReg.getFullYear());
+    console.log(fechaReg.getMonth() + 1);
+    console.log(fechaReg.getDate());
+
+    //return false;
+
+    this.model.fechaEstimadaSalida =
+      fechaReg.getDate() +
+      '/' +
+      (fechaReg.getMonth() + 1) +
+      '/' +
+      fechaReg.getFullYear();
+
+    console.log(this.model.fechaEstimadaSalida);
+    //return false;
+
     this.sessionStorageService.store('ss_empresa_ruta_data', this.model);
     console.log(this.model);
 
