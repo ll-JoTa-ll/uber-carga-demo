@@ -1,5 +1,11 @@
 <div class="row m-4">
-  <div class="col-12 pt-4" style="font-size: 30px">Cargo App</div>
+  <div class="col-12 pt-4 text-center" style="font-size: 30px; font-size: 30px">
+    <strong>Cargo App</strong>
+  </div>
+
+  <div class="col-12 text-center">
+    <img src="./assets/images/cargoapp.jpg" style="width: 150px" alt="" />
+  </div>
 
   <div *ngIf="false" class="col-12">
     loginTransportista: {{ loginTransportista }}
@@ -16,9 +22,9 @@
           }"
           (click)="selTipo(false, true)"
           class="btn"
-          style="width: 90%"
+          style="width: 90%; font-size: 20px"
         >
-          Transportista
+          <strong>Transportista</strong>
         </button>
       </div>
 
@@ -30,9 +36,9 @@
           }"
           (click)="selTipo(true, false)"
           class="btn"
-          style="width: 90%"
+          style="width: 90%; font-size: 20px"
         >
-          Empresa
+          <strong>Empresa</strong>
         </button>
       </div>
     </div>
