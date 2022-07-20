@@ -94,13 +94,11 @@ export class UsuarioService {
       .snapshotChanges();
   }
 
-  createEmpresaRutaTransportistaProceso(
-    empresaRutaTransportistaProceso: EmpresaRutaTransportistaProceso
-  ) {
+  createEmpresaRutaProceso(data) {
     return new Promise<any>((resolve, reject) => {
       this.angularFirestore
         .collection('empresaRutaTransportistaProceso')
-        .add(empresaRutaTransportistaProceso)
+        .add(data)
         .then(
           (response) => {
             console.log(response);

@@ -32,6 +32,7 @@ export class RutasOfertasComponent implements OnInit {
         });
         console.log('solicitudes:');
         console.log(this.solicitudes);
+        this.solicitudes = this.solicitudes.filter((x) => x.estado_int == 1);
         this.spinner.hide();
       },
 

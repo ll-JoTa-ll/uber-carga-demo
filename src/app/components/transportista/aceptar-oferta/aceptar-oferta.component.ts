@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from '../../../services/usuario.service';
 import { EmpresaRuta } from '../../../models/empresaRuta';
@@ -12,12 +12,11 @@ import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
   templateUrl: './aceptar-oferta.component.html',
   styleUrls: ['./aceptar-oferta.component.sass'],
 })
-export class AceptarOfertaComponent implements OnInit {
+export class AceptarOfertaComponent implements OnInit, AfterViewInit {
   empresa_sel: EmpresaRuta = new EmpresaRuta();
   usuario_empresa: Usuario = new Usuario();
   transportista_empresa: Usuario = new Usuario();
-  empresaRutaTransportistaProceso: EmpresaRutaTransportistaProceso =
-    new EmpresaRutaTransportistaProceso();
+  //empresaRutaTransportistaProceso: EmpresaRutaTransportistaProceso;
 
   constructor(
     private usuarioService: UsuarioService,
@@ -35,18 +34,10 @@ export class AceptarOfertaComponent implements OnInit {
     this.spinner.show();
     this.usuarioService.getUsuarioById(this.empresa_sel.empresaId).subscribe(
       (result: Usuario) => {
-        console.log('result');
-        console.log('result');
-        console.log('result');
-        console.log('result');
-        console.log('result');
-
-        //console.log(result);
+        console.log('this.usuario_empresa');
         this.usuario_empresa = result;
+        console.log(this.usuario_empresa);
 
-        console.log('UPDATE');
-        console.log('UPDATE');
-        console.log('UPDATE');
         console.log('UPDATE');
         console.log('UPDATE');
 
@@ -60,12 +51,19 @@ export class AceptarOfertaComponent implements OnInit {
           this.empresa_sel.id
         );
 
-        this.empresaRutaTransportistaProceso.empresaId = this.empresa_sel.id;
-        this.empresaRutaTransportistaProceso.empresaId =
-          this.transportista_empresa[0].id;
-        this.usuarioService.createEmpresaRutaTransportistaProceso(
-          this.empresaRutaTransportistaProceso
-        );
+        var data = {
+          empresaId: this.empresa_sel.empresaId,
+          transportistaId: this.transportista_empresa[0].id,
+          rutaId: this.empresa_sel.id,
+        };
+
+        console.log('createEmpresaRutaTransportistaProceso');
+        console.log('createEmpresaRutaTransportistaProceso');
+        console.log('createEmpresaRutaTransportistaProceso');
+        console.log(data);
+
+        this.usuarioService.createEmpresaRutaProceso(data);
+
         this.spinner.hide();
       },
       (err) => {
@@ -78,6 +76,8 @@ export class AceptarOfertaComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {}
 
   home() {
     this.router.navigate(['/transporte']);
