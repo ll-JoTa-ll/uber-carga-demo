@@ -30,7 +30,7 @@ export class IngresarDatosTransComponent implements OnInit {
     this.model.condicionesEspeciales = '0';
     this.model.origen = '';
     this.model.destino = '';
-    this.model.estado = 'Sin Transporte';
+    this.model.estado = 'Buscando Transportista';
     this.model.empresaCorreo = this.empresa[0].correo;
     this.model.empresaId = this.empresa[0].id;
   }

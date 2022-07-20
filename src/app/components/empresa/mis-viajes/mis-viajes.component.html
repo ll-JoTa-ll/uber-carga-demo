@@ -1,20 +1,26 @@
-<div class="row">
+<div class="row p-5">
   <div class="col-12">
-    <button (click)="irRegistro()" class="btn form-control">
+    <button
+      (click)="irRegistro()"
+      class="btn form-control"
+      style="background-color: coral; color: white"
+    >
       Registrar Solicitud
     </button>
   </div>
 
+  <div class="col-12 pt-4">Mis Viajes:</div>
+
   <div class="col-12">
-    <div class="row p-4">
+    <div class="row">
       <div *ngFor="let item of empresaSolicitudes" class="col-12 pt-3">
         <div
-          class="row"
+          class="row p-2"
           style="border-radius: 20px; background-color: cornflowerblue"
         >
           <div class="col-12">Origen: {{ item.origen }}</div>
 
-          <div class="col-12">Origen: {{ item.destino }}</div>
+          <div class="col-12">Destino: {{ item.destino }}</div>
 
           <div class="col-12">Estado: {{ item.estado }}</div>
         </div>
