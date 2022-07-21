@@ -39,4 +39,8 @@ export class SolicitudCargaComponent implements OnInit, AfterViewInit {
       //projection: 'globe', // display the map as a 3D globe
     });
   }
+
+  finalizarServicio() {
+    this.router.navigate(['/empresa/servicio-fin']);
+  }
 }

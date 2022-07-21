@@ -12,7 +12,7 @@ export class ElegisteTransporteComponent implements OnInit {
   ngOnInit(): void {}
 
   back() {
-    this.router.navigate(['/empresa/elegiste-transporte']);
+    this.router.navigate(['/empresa/transportistas-lista']);
   }
 
   next() {

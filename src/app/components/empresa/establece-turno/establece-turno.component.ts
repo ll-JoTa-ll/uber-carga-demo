@@ -12,7 +12,7 @@ export class EstableceTurnoComponent implements OnInit {
   ngOnInit(): void {}
 
   back() {
-    this.router.navigate(['/empresa/establece-turno']);
+    this.router.navigate(['/empresa/elegiste-transporte']);
   }
 
   next() {
