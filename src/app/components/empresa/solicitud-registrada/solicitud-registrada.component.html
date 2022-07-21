@@ -5,7 +5,13 @@
 
   <div class="col-12 text-center pt-4">Solicitud Aceptada Exitosamente</div>
 
-  <div class="col-12 text-center pt-4">
+  <div class="col-12 text-center pt-5">Buscando Transportista en tu Zona</div>
+
+  <div class="col-12 text-center pt-3">
+    <img src="./assets/images/loading.gif" style="width: 50px" alt="" />
+  </div>
+
+  <div *ngIf="false" class="col-12 text-center pt-4">
     <button
       (click)="irHome()"
       class="btn form-control"
