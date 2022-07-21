@@ -5,6 +5,7 @@ import { ElegirTransportistaComponent } from './components/empresa/elegir-transp
 import { ElegisteTransporteComponent } from './components/empresa/elegiste-transporte/elegiste-transporte.component';
 import { EmpresaComponent } from './components/empresa/empresa.component';
 import { EncontramosTrasportesComponent } from './components/empresa/encontramos-trasportes/encontramos-trasportes.component';
+import { EstableceTurnoComponent } from './components/empresa/establece-turno/establece-turno.component';
 import { IngresarDatosTransComponent } from './components/empresa/ingresar-datos-trans/ingresar-datos-trans.component';
 import { MetricasComponent } from './components/empresa/metricas/metricas.component';
 import { MisViajesComponent } from './components/empresa/mis-viajes/mis-viajes.component';
@@ -59,6 +60,11 @@ const routes: Routes = [
   {
     path: 'empresa/elegiste-transporte',
     component: ElegisteTransporteComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'empresa/establece-turno',
+    component: EstableceTurnoComponent,
     runGuardsAndResolvers: 'always',
   },
   {

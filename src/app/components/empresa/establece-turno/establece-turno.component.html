@@ -1,1 +1,70 @@
-<p>establece-turno works!</p>
+<div class="row p-5">
+  <div class="col-12 text-center">
+    <strong style="font-size: 25px">Establece el turno de carga</strong>
+  </div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-12">Turno</div>
+      <div class="col-12"><input class="form-control" type="text" /></div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-12">Fecha de carga</div>
+      <div class="col-12"><input class="form-control" type="text" /></div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-12">Hora</div>
+      <div class="col-12"><input class="form-control" type="text" /></div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-12">Direccion de recogida</div>
+      <div class="col-12"><input class="form-control" type="text" /></div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-12">Condiciones adicionales</div>
+      <div class="col-12"><input class="form-control" type="text" /></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" style="background-color: yellow; height: 5px"></div>
+
+  <div class="col-12"></div>
+
+  <div class="col-12 pt-3">
+    <div class="row">
+      <div class="col-6">
+        <button
+          (click)="back()"
+          style="background-color: coral; color: white"
+          class="btn form-control"
+        >
+          Atras
+        </button>
+      </div>
+
+      <div class="col-6">
+        <button
+          (click)="next()"
+          style="background-color: coral; color: white"
+          class="btn form-control"
+        >
+          Siguiente
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

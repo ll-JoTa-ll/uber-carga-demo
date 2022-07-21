@@ -30,6 +30,8 @@ import { ElegirTransportistaComponent } from './components/empresa/elegir-transp
 import { EncontramosTrasportesComponent } from './components/empresa/encontramos-trasportes/encontramos-trasportes.component';
 import { ElegisteTransporteComponent } from './components/empresa/elegiste-transporte/elegiste-transporte.component';
 import { EstableceTurnoComponent } from './components/empresa/establece-turno/establece-turno.component';
+import { SolicitudCargaComponent } from './components/empresa/solicitud-carga/solicitud-carga.component';
+import { ServicioFinalizadoComponent } from './components/empresa/servicio-finalizado/servicio-finalizado.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { EstableceTurnoComponent } from './components/empresa/establece-turno/es
     EncontramosTrasportesComponent,
     ElegisteTransporteComponent,
     EstableceTurnoComponent,
+    SolicitudCargaComponent,
+    ServicioFinalizadoComponent,
   ],
   imports: [
     BrowserModule,
