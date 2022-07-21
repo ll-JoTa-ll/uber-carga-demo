@@ -9,6 +9,8 @@ import { EstableceTurnoComponent } from './components/empresa/establece-turno/es
 import { IngresarDatosTransComponent } from './components/empresa/ingresar-datos-trans/ingresar-datos-trans.component';
 import { MetricasComponent } from './components/empresa/metricas/metricas.component';
 import { MisViajesComponent } from './components/empresa/mis-viajes/mis-viajes.component';
+import { ServicioFinalizadoComponent } from './components/empresa/servicio-finalizado/servicio-finalizado.component';
+import { SolicitudCargaComponent } from './components/empresa/solicitud-carga/solicitud-carga.component';
 import { SolicitudRegistradaComponent } from './components/empresa/solicitud-registrada/solicitud-registrada.component';
 import { LoginComponent } from './components/login/login.component';
 import { AceptarOfertaComponent } from './components/transportista/aceptar-oferta/aceptar-oferta.component';
@@ -67,6 +69,18 @@ const routes: Routes = [
     component: EstableceTurnoComponent,
     runGuardsAndResolvers: 'always',
   },
+  {
+    path: 'empresa/solicitud-carga',
+    component: SolicitudCargaComponent,
+    runGuardsAndResolvers: 'always',
+  },
+
+  {
+    path: 'empresa/servicio-fin',
+    component: ServicioFinalizadoComponent,
+    runGuardsAndResolvers: 'always',
+  },
+
   {
     path: 'transporte',
     component: TransportistaComponent,
