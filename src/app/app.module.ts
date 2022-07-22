@@ -9,6 +9,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 import { environment } from 'src/environments/environment';
 
+import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { TabsModule } from 'ngx-bootstrap/tabs';
@@ -58,6 +59,7 @@ import { ServicioFinalizadoComponent } from './components/empresa/servicio-final
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     TabsModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,

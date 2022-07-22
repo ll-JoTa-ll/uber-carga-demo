@@ -17,6 +17,8 @@ export class EmpresaComponent implements OnInit {
       tipoVehiculo: 30,
       valorViaje: 4.477,
       longlat: [-78.96881086466664, -8.091603197876042],
+      urlget:
+        'https://api.mapbox.com/directions/v5/mapbox/driving/-77.01759557142694%2C-11.98850579670065%3B-78.96881086466664%2C-8.091603197876042',
     },
     {
       destino: 'Ica',
@@ -25,6 +27,8 @@ export class EmpresaComponent implements OnInit {
       tipoVehiculo: 25,
       valorViaje: 3.623,
       longlat: [-75.73014332206233, -14.057739178319324],
+      urlget:
+        'https://api.mapbox.com/directions/v5/mapbox/driving/-77.01759557142694%2C-11.98850579670065%3B-75.73014332206233%2C-14.057739178319324',
     },
     {
       destino: 'Huacho',
@@ -33,6 +37,8 @@ export class EmpresaComponent implements OnInit {
       tipoVehiculo: 30,
       valorViaje: 4.278,
       longlat: [-77.6059805482074, -11.068336228835392],
+      urlget:
+        'https://api.mapbox.com/directions/v5/mapbox/driving/-77.01759557142694%2C-11.98850579670065%3B-77.6059805482074%2C-11.068336228835392',
     },
     {
       destino: 'Arequipa',
@@ -41,6 +47,8 @@ export class EmpresaComponent implements OnInit {
       tipoVehiculo: 25,
       valorViaje: 4.03,
       longlat: [-71.52621047695156, -16.401660068145944],
+      urlget:
+        'https://api.mapbox.com/directions/v5/mapbox/driving/-77.01759557142694%2C-11.98850579670065%3B-71.52621047695156%2C-16.401660068145944',
     },
   ];
 

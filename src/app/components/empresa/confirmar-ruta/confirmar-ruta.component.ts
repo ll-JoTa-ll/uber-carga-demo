@@ -11,6 +11,7 @@ import { Usuario } from '../../../models/usuario';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { SessionStorageService, LocalStorageService } from 'ngx-webstorage';
+import { MapboxglService } from '../../../services/mapboxgl.service';
 
 @Component({
   selector: 'app-confirmar-ruta',
@@ -22,22 +23,29 @@ export class ConfirmarRutaComponent implements OnInit, AfterViewInit {
   empresa_ruta_data: any = {};
   lugarDestino: any = {};
   markerDestino: any[] = [];
+  distanciaEstimada;
+  tiempoEstimado;
 
   constructor(
     private usuarioService: UsuarioService,
     private router: Router,
     private spinner: NgxSpinnerService,
     private sessionStorageService: SessionStorageService,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private mapboxglService: MapboxglService
   ) {
     this.lugarDestino = this.sessionStorageService.retrieve('ss_lugarDestino');
-    console.log('constructor ConfirmarRutaComponent');
-
-    console.log(this.lugarDestino);
 
     this.markerDestino = this.lugarDestino.longlat;
 
-    console.log(this.markerDestino);
+    this.mapboxglService.getDriving(this.lugarDestino.urlget).subscribe(
+      (result: any) => {
+        console.log(result);
+        this.drawPolyLine(result.routes[0]);
+      },
+      (err: any) => {},
+      () => {}
+    );
   }
 
   ngOnInit(): void {}
@@ -71,6 +79,19 @@ export class ConfirmarRutaComponent implements OnInit, AfterViewInit {
     })
       .setLngLat([destinoLng, destinoLat])
       .addTo(map);
+  }
+
+  drawPolyLine(route: any) {
+    console.log({
+      kms: route.distance / 1000,
+      duration: route.duration / 60, //minutos
+    });
+
+    this.distanciaEstimada = route.distance / 1000;
+
+    let duracionMinutos = route.duration / 60;
+    let duracionHoras = duracionMinutos / 60;
+    this.tiempoEstimado = duracionHoras;
   }
 
   confirmarRuta() {
