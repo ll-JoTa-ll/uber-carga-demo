@@ -36,7 +36,12 @@
     <div class="row">
       <div class="col-12">Origen</div>
       <div class="col-12">
-        <input [(ngModel)]="model.origen" class="form-control" type="text" />
+        <input
+          readonly
+          [(ngModel)]="model.origen"
+          class="form-control"
+          type="text"
+        />
       </div>
     </div>
   </div>
@@ -45,7 +50,16 @@
     <div class="row">
       <div class="col-12">Destino</div>
       <div class="col-12">
-        <input [(ngModel)]="model.destino" class="form-control" type="text" />
+        <select
+          (change)="changeDestino($event)"
+          [(ngModel)]="model.destino"
+          class="form-control"
+        >
+          <option value="0">Seleccionar</option>
+          <option *ngFor="let item of lugares" [value]="item.destino">
+            {{ item.destino }}
+          </option>
+        </select>
       </div>
     </div>
   </div>
