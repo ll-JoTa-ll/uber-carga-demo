@@ -34,7 +34,8 @@ export class ConfirmarRutaComponent implements OnInit, AfterViewInit {
   tiempoEstimado;
   coords;
   start;
-  bounds;
+  bounds = new LngLatBounds();
+  map: Map;
 
   constructor(
     private usuarioService: UsuarioService,
@@ -56,7 +57,7 @@ export class ConfirmarRutaComponent implements OnInit, AfterViewInit {
       container: this.mapDivElement.nativeElement, //'map', // container ID
       style: 'mapbox://styles/mapbox/streets-v11', // style URL
       center: [-75.04684589565241, -12.028961858269186], // starting position [lng, lat]
-      zoom: 5, // starting zoom
+      zoom: 4, // starting zoom
       //projection: 'globe', // display the map as a 3D globe
     });
 
@@ -92,6 +93,8 @@ export class ConfirmarRutaComponent implements OnInit, AfterViewInit {
           .setLngLat([destinoLng, destinoLat])
           .addTo(map);
 
+        this.map = map;
+
         map?.fitBounds(this.bounds, { padding: 200 });
 
         let sourceData: AnySourceData = {
@@ -114,21 +117,23 @@ export class ConfirmarRutaComponent implements OnInit, AfterViewInit {
         console.log('sourceData');
         console.log(sourceData);
 
-        //limpiar ruta previa
-        map.addSource('RouteString', sourceData);
+        map.on('load', function () {
+          //limpiar ruta previa
+          map.addSource('RouteString', sourceData);
 
-        map.addLayer({
-          id: 'RouteString',
-          type: 'line',
-          source: 'RouteString',
-          layout: {
-            'line-cap': 'round',
-            'line-join': 'round',
-          },
-          paint: {
-            'line-color': 'black',
-            'line-width': 3,
-          },
+          map.addLayer({
+            id: 'RouteString',
+            type: 'line',
+            source: 'RouteString',
+            layout: {
+              'line-cap': 'round',
+              'line-join': 'round',
+            },
+            paint: {
+              'line-color': 'green',
+              'line-width': 3,
+            },
+          });
         });
       }
     );
