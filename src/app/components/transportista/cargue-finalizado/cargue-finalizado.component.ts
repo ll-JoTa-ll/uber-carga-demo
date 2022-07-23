@@ -12,10 +12,10 @@ export class CargueFinalizadoComponent implements OnInit {
   ngOnInit(): void {}
 
   atras() {
-    this.router.navigate(['/transporte/cargue-agendado']);
+    this.router.navigate(['/transporte/cargue-nro-carga']);
   }
 
   next() {
-    this.router.navigate(['/transporte/cargue-finalizado']);
+    this.router.navigate(['/transporte/cargue-pago-recibido']);
   }
 }
