@@ -37,6 +37,9 @@ import { CargueAgendadoComponent } from './components/transportista/cargue-agend
 import { CargueNroCargaComponent } from './components/transportista/cargue-nro-carga/cargue-nro-carga.component';
 import { CargueFinalizadoComponent } from './components/transportista/cargue-finalizado/cargue-finalizado.component';
 import { CarguePagoRecibidoComponent } from './components/transportista/cargue-pago-recibido/cargue-pago-recibido.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { PersonaNaturalComponent } from './components/registro/persona-natural/persona-natural.component';
+import { EmpresaRegComponent } from './components/registro/empresa-reg/empresa-reg.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import { CarguePagoRecibidoComponent } from './components/transportista/cargue-p
     CargueNroCargaComponent,
     CargueFinalizadoComponent,
     CarguePagoRecibidoComponent,
+    RegistroComponent,
+    PersonaNaturalComponent,
+    EmpresaRegComponent,
   ],
   imports: [
     BrowserModule,
