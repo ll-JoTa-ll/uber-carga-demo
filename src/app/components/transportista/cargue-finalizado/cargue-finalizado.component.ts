@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cargue-finalizado',
   templateUrl: './cargue-finalizado.component.html',
-  styleUrls: ['./cargue-finalizado.component.sass']
+  styleUrls: ['./cargue-finalizado.component.sass'],
 })
 export class CargueFinalizadoComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  atras() {
+    this.router.navigate(['/transporte/cargue-agendado']);
   }
 
+  next() {
+    this.router.navigate(['/transporte/cargue-finalizado']);
+  }
 }

@@ -41,6 +41,6 @@ export class AceptarOfertaComponent implements OnInit {
   }
 
   next() {
-    this.router.navigate(['/transporte']);
+    this.router.navigate(['/transporte/cargue-agendado']);
   }
 }

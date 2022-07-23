@@ -1,1 +1,114 @@
-<p>cargue-nro-carga works!</p>
+<div class="row p-5">
+  <div class="col-12 text-center">
+    <strong style="font-size: 20px"> Solicitud de Carga No 001 </strong>
+  </div>
+
+  <div class="col-12 pt-4">
+    <div class="row">
+      <div class="col-3"></div>
+
+      <div class="col-6">
+        <div
+          class="row"
+          style="background-color: black; color: white; border-radius: 20px"
+        >
+          <div class="col-12 text-center">Estado</div>
+          <div class="col-12 text-center">En proceso de carga</div>
+        </div>
+      </div>
+
+      <div class="col-3"></div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-4">
+    <div class="row">
+      <div class="col-5">
+        <div
+          class="row"
+          style="background-color: black; color: white; border-radius: 20px"
+        >
+          <div class="col-12 text-center">Origen</div>
+          <div class="col-12 text-center">Lima</div>
+        </div>
+      </div>
+
+      <div class="col-2 text-center">
+        <img
+          style="width: 30px"
+          src="./assets/images/flecha-correcta.png"
+          alt=""
+        />
+      </div>
+
+      <div class="col-5">
+        <div
+          class="row"
+          style="background-color: black; color: white; border-radius: 20px"
+        >
+          <div class="col-12 text-center">Destino</div>
+          <div class="col-12 text-center">Trujillo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-4">
+    <strong>Enviar Notificaciones</strong>
+  </div>
+
+  <div class="col-12 pt-4">
+    <div class="row">
+      <div class="col-6">
+        <img class="img-fluid" src="./assets/images/transportista.jpg" alt="" />
+      </div>
+
+      <div class="col-6">
+        <input class="form-control" type="text" />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 pt-4">
+    <strong style="color: blue"> Ver novedades reportadas </strong>
+  </div>
+
+  <div class="col-12 pt-4">
+    <div class="row">
+      <div
+        class="col-4 text-center"
+        style="
+          background-color: coral;
+          color: white;
+          font-size: 20px;
+          border-radius: 18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        "
+      >
+        Solicitar Ayuda
+      </div>
+
+      <div class="col-4"></div>
+
+      <div
+        (click)="next()"
+        class="col-4 text-center"
+        style="
+          background-color: coral;
+          color: white;
+          font-size: 20px;
+          border-radius: 18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        "
+      >
+        Siguiente
+      </div>
+    </div>
+  </div>
+</div>

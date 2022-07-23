@@ -14,6 +14,10 @@ import { SolicitudCargaComponent } from './components/empresa/solicitud-carga/so
 import { SolicitudRegistradaComponent } from './components/empresa/solicitud-registrada/solicitud-registrada.component';
 import { LoginComponent } from './components/login/login.component';
 import { AceptarOfertaComponent } from './components/transportista/aceptar-oferta/aceptar-oferta.component';
+import { CargueAgendadoComponent } from './components/transportista/cargue-agendado/cargue-agendado.component';
+import { CargueFinalizadoComponent } from './components/transportista/cargue-finalizado/cargue-finalizado.component';
+import { CargueNroCargaComponent } from './components/transportista/cargue-nro-carga/cargue-nro-carga.component';
+import { CarguePagoRecibidoComponent } from './components/transportista/cargue-pago-recibido/cargue-pago-recibido.component';
 import { RutasOfertasComponent } from './components/transportista/rutas-ofertas/rutas-ofertas.component';
 import { TransportistaComponent } from './components/transportista/transportista.component';
 
@@ -94,6 +98,26 @@ const routes: Routes = [
   {
     path: 'transporte/oferta-enviada',
     component: AceptarOfertaComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'transporte/cargue-agendado',
+    component: CargueAgendadoComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'transporte/cargue-nro-carga',
+    component: CargueNroCargaComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'transporte/cargue-finalizado',
+    component: CargueFinalizadoComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'transporte/cargue-pago-recibido',
+    component: CarguePagoRecibidoComponent,
     runGuardsAndResolvers: 'always',
   },
 ];
