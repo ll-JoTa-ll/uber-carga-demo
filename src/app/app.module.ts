@@ -33,6 +33,10 @@ import { ElegisteTransporteComponent } from './components/empresa/elegiste-trans
 import { EstableceTurnoComponent } from './components/empresa/establece-turno/establece-turno.component';
 import { SolicitudCargaComponent } from './components/empresa/solicitud-carga/solicitud-carga.component';
 import { ServicioFinalizadoComponent } from './components/empresa/servicio-finalizado/servicio-finalizado.component';
+import { CargueAgendadoComponent } from './components/transportista/cargue-agendado/cargue-agendado.component';
+import { CargueNroCargaComponent } from './components/transportista/cargue-nro-carga/cargue-nro-carga.component';
+import { CargueFinalizadoComponent } from './components/transportista/cargue-finalizado/cargue-finalizado.component';
+import { CarguePagoRecibidoComponent } from './components/transportista/cargue-pago-recibido/cargue-pago-recibido.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,10 @@ import { ServicioFinalizadoComponent } from './components/empresa/servicio-final
     EstableceTurnoComponent,
     SolicitudCargaComponent,
     ServicioFinalizadoComponent,
+    CargueAgendadoComponent,
+    CargueNroCargaComponent,
+    CargueFinalizadoComponent,
+    CarguePagoRecibidoComponent,
   ],
   imports: [
     BrowserModule,

@@ -35,4 +35,12 @@ export class AceptarOfertaComponent implements OnInit {
   home() {
     this.router.navigate(['/transporte']);
   }
+
+  atras() {
+    this.router.navigate(['/transporte/ofertas']);
+  }
+
+  next() {
+    this.router.navigate(['/transporte']);
+  }
 }

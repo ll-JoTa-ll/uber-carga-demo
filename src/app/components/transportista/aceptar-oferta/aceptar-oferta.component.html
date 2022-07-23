@@ -3,9 +3,11 @@
     <img src="./assets/images/check.png" style="width: 100px" alt="" />
   </div>
 
-  <div class="col-12 text-center pt-4">Bien hecho</div>
+  <div class="col-12 text-center pt-4">
+    <strong style="font-size: 25px"> Bien hecho </strong>
+  </div>
 
-  <div class="col-12 pt-4 text-center">
+  <div class="col-12 pt-4 text-center" style="font-size: 25px">
     Has aceptado la solicitud de carga de:
   </div>
 
@@ -41,13 +43,27 @@
   <div class="col-12"></div>
 
   <div class="col-12 pt-5">
-    <button
-      (click)="home()"
-      style="background-color: coral; color: white"
-      class="btn form-control"
-    >
-      Home
-    </button>
+    <div class="row">
+      <div class="col-6">
+        <button
+          (click)="atras()"
+          style="background-color: coral; color: white"
+          class="btn form-control"
+        >
+          Atras
+        </button>
+      </div>
+
+      <div class="col-6">
+        <button
+          (click)="next()"
+          style="background-color: coral; color: white"
+          class="btn form-control"
+        >
+          Siguiente
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
