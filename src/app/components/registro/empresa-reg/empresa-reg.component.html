@@ -31,7 +31,7 @@
       <div class="col-12">Nombre de la Empresa:</div>
 
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <input [(ngModel)]="model.nombre" class="form-control" type="text" />
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
       <div class="col-12">Ruc de la Empresa:</div>
 
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <input [(ngModel)]="model.dni" class="form-control" type="text" />
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
       <div class="col-12">Ciudad:</div>
 
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <input [(ngModel)]="model.ciudad" class="form-control" type="text" />
       </div>
     </div>
   </div>
@@ -61,7 +61,7 @@
       <div class="col-12">Direccion:</div>
 
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <input [(ngModel)]="model.direccion" class="form-control" type="text" />
       </div>
     </div>
   </div>
@@ -71,7 +71,11 @@
       <div class="col-12">Nombre y Apellidos</div>
 
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <input
+          [(ngModel)]="model.nombreApellido"
+          class="form-control"
+          type="text"
+        />
       </div>
     </div>
   </div>
@@ -81,7 +85,7 @@
       <div class="col-12">Email:</div>
 
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <input [(ngModel)]="model.correo" class="form-control" type="text" />
       </div>
     </div>
   </div>
@@ -91,7 +95,7 @@
       <div class="col-12">Celular:</div>
 
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <input [(ngModel)]="model.celular" class="form-control" type="text" />
       </div>
     </div>
   </div>
@@ -101,7 +105,7 @@
       <div class="col-12">Contraseña:</div>
 
       <div class="col-12">
-        <input class="form-control" type="text" />
+        <input [(ngModel)]="model.clave" class="form-control" type="text" />
       </div>
     </div>
   </div>
@@ -115,6 +119,7 @@
 
   <div class="col-12 pt-3 text-center">
     <button
+      (click)="crearUsuario()"
       class="btn form-control"
       style="background-color: blue; color: white"
     >
@@ -122,3 +127,12 @@
     </button>
   </div>
 </div>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="timer"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>

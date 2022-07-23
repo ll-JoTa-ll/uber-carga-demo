@@ -20,7 +20,7 @@ export class UsuarioService {
     return this.angularFirestore.collection('usuario').doc(id).valueChanges();
   }
 
-  createUsuario(usuario: Usuario) {
+  createUsuario(usuario) {
     return new Promise<any>((resolve, reject) => {
       this.angularFirestore
         .collection('usuario')
