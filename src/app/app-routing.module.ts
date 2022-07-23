@@ -13,6 +13,9 @@ import { ServicioFinalizadoComponent } from './components/empresa/servicio-final
 import { SolicitudCargaComponent } from './components/empresa/solicitud-carga/solicitud-carga.component';
 import { SolicitudRegistradaComponent } from './components/empresa/solicitud-registrada/solicitud-registrada.component';
 import { LoginComponent } from './components/login/login.component';
+import { EmpresaRegComponent } from './components/registro/empresa-reg/empresa-reg.component';
+import { PersonaNaturalComponent } from './components/registro/persona-natural/persona-natural.component';
+import { RegistroComponent } from './components/registro/registro.component';
 import { AceptarOfertaComponent } from './components/transportista/aceptar-oferta/aceptar-oferta.component';
 import { CargueAgendadoComponent } from './components/transportista/cargue-agendado/cargue-agendado.component';
 import { CargueFinalizadoComponent } from './components/transportista/cargue-finalizado/cargue-finalizado.component';
@@ -118,6 +121,21 @@ const routes: Routes = [
   {
     path: 'transporte/cargue-pago-recibido',
     component: CarguePagoRecibidoComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'registro',
+    component: RegistroComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'registro/persona-natural',
+    component: PersonaNaturalComponent,
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'registro/empresa-reg',
+    component: EmpresaRegComponent,
     runGuardsAndResolvers: 'always',
   },
 ];

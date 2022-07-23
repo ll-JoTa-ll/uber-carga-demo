@@ -91,4 +91,8 @@ export class LoginComponent implements OnInit {
 
     //this.router.navigate(['/empresa/ingresar-ruta']);
   }
+
+  goRegistro() {
+    this.router.navigate(['/registro']);
+  }
 }
